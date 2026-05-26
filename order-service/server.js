@@ -102,5 +102,5 @@ app.delete('/orders/:id', (req, res) => {
   res.json({ message: 'Order cancelled', order: orders[idx] });
 });
 
-const PORT = process.env.PORT || 3003;
+const PORT = 3003;
 app.listen(PORT, () => console.log(`📦 Order Service running on port ${PORT}`));

@@ -55,7 +55,7 @@ app.use('/products', makeProxy('http://localhost:3002'));
 app.use('/orders',   makeProxy('http://localhost:3003'));
 app.use('/cart',     makeProxy('http://localhost:3004'));
 
-const PORT = 8081;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`\n🚀 API Gateway running at http://localhost:${PORT}`);
   console.log('📡 Routing:');

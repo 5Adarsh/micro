@@ -114,5 +114,5 @@ app.delete('/products/:id', (req, res) => {
   res.json({ message: 'Product deleted', product: removed });
 });
 
-const PORT = process.env.PORT || 3002;
+const PORT = 3002;
 app.listen(PORT, () => console.log(`🛍️  Product Service running on port ${PORT}`));
