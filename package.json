@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Shopping platform with 6 microservices, all in-memory (no database)",
   "scripts": {
-    "start": "concurrently --names \"GATEWAY,USERS,PRODUCTS,ORDERS,CART,FRONTEND\" --prefix-colors \"cyan,blue,green,yellow,magenta,gray\" \"node gateway.js\" \"node user-service/server.js\" \"node product-service/server.js\" \"node order-service/server.js\" \"node cart-service/server.js\" \"npx serve frontend -p 5000 --no-clipboard\"",
+    "start": "concurrently --names \"GATEWAY,USERS,PRODUCTS,ORDERS,CART\" --prefix-colors \"cyan,blue,green,yellow,magenta\" \"node gateway.js\" \"node user-service/server.js\" \"node product-service/server.js\" \"node order-service/server.js\" \"node cart-service/server.js\"",
     "install:all": "npm install && cd user-service && npm install && cd ../product-service && npm install && cd ../order-service && npm install && cd ../cart-service && npm install && cd ../review-service && npm install && cd ../notification-service && npm install"
   },
   "dependencies": {

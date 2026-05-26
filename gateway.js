@@ -1,5 +1,6 @@
 const express = require('express');
 const { createProxyMiddleware } = require('http-proxy-middleware');
+const path = require('path');
 
 const app = express();
 
@@ -54,6 +55,12 @@ app.use('/users',    makeProxy('http://localhost:3001'));
 app.use('/products', makeProxy('http://localhost:3002'));
 app.use('/orders',   makeProxy('http://localhost:3003'));
 app.use('/cart',     makeProxy('http://localhost:3004'));
+
+app.use(express.static(path.join(__dirname, "frontend")));
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "frontend", "index.html"));
+});
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
